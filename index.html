@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Sports Resort - Luxury Hotel with World-Class Sports Facilities</title>
+    <meta name="description" content="Experience luxury hospitality with professional football field, championship tennis court, state-of-art gym, and Olympic swimming pool. Book your stay at Elite Sports Resort.">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Fixed GSAP library loading order -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+</head>
+  </head>
+  <body>
+    <div id="smooth-wrapper">
+    <div id="smooth-content">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="container">
+        <div class="nav-content">
+          <div class="logo" onclick="scrollToSection('home')">
+            <h1>Elite Sports Resort</h1>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="nav-desktop">
+            <a href="#home" onclick="scrollToSection('home')">Home</a>
+            <a href="#facilities" onclick="scrollToSection('facilities')"
+              >Facilities</a
+            >
+            <a href="#gallery" onclick="scrollToSection('gallery')">Gallery</a>
+            <a href="#reviews" onclick="scrollToSection('reviews')">Reviews</a>
+            <a href="#booking" onclick="scrollToSection('booking')">Booking</a>
+            <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+          </nav>
+
+          <!-- CTA Buttons -->
+          <div class="nav-cta">
+            <button
+              class="btn btn-outline"
+              onclick="scrollToSection('contact')"
+            >
+              <i class="fas fa-phone"></i> Contact
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="scrollToSection('booking')"
+            >
+              <i class="fas fa-calendar"></i> Book Now
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-nav" class="nav-mobile">
+          <a href="#home" onclick="scrollToSection('home'); closeMobileMenu()"
+            >Home</a
+          >
+          <a
+            href="#facilities"
+            onclick="scrollToSection('facilities'); closeMobileMenu()"
+            >Facilities</a
+          >
+          <a
+            href="#gallery"
+            onclick="scrollToSection('gallery'); closeMobileMenu()"
+            >Gallery</a
+          >
+          <a
+            href="#reviews"
+            onclick="scrollToSection('reviews'); closeMobileMenu()"
+            >Reviews</a
+          >
+          <a
+            href="#booking"
+            onclick="scrollToSection('booking'); closeMobileMenu()"
+            >Booking</a
+          >
+          <a
+            href="#contact"
+            onclick="scrollToSection('contact'); closeMobileMenu()"
+            >Contact</a
+          >
+          <div class="mobile-cta">
+            <button
+              class="btn btn-outline"
+              onclick="scrollToSection('contact'); closeMobileMenu()"
+            >
+              <i class="fas fa-phone"></i> Contact
+            </button>
+            <button
+              class="btn btn-primary"
+              onclick="scrollToSection('booking'); closeMobileMenu()"
+            >
+              <i class="fas fa-calendar"></i> Book Now
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-background"></div>
+      <div class="hero-content">
+        <div class="hero-stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h1 class="hero-title">Elite Sports Resort</h1>
+        <p class="hero-subtitle">
+          Where luxury meets athletic excellence. Experience world-class sports
+          facilities in an environment of unparalleled comfort and
+          sophistication.
+        </p>
+
+        <div class="hero-buttons">
+          <button
+            class="btn btn-primary btn-lg"
+            onclick="scrollToSection('booking')"
+          >
+            <i class="fas fa-calendar"></i> Book Your Stay
+          </button>
+          <button
+            class="btn btn-outline btn-lg"
+            onclick="scrollToSection('facilities')"
+          >
+            <i class="fas fa-map-marker-alt"></i> Explore Facilities
+          </button>
+        </div>
+
+        <div class="hero-features">
+          <div class="feature-card">
+            <div class="feature-icon">⚽</div>
+            <p>Professional Football Field</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎾</div>
+            <p>Championship Tennis Court</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💪</div>
+            <p>State-of-Art Gym</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏊</div>
+            <p>Olympic-Size Pool</p>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-label">Happy Guests</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" data-target="15">0</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number" data-target="98">0</div>
+            <div class="stat-label">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" onclick="scrollToSection('facilities')">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">World-Class Facilities</span>
+          <h2>Unmatched Sports Excellence</h2>
+          <p>
+            Experience the finest sports facilities designed for athletes,
+            teams, and fitness enthusiasts of all levels
+          </p>
+        </div>
+
+        <div class="facilities-grid">
+          <div class="facility-card">
+            <div class="facility-image">
+              <img
+                src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Professional Football Field"
+              />
+              <div class="facility-overlay">
+                <div class="facility-icon">⚽</div>
+                <h3>Professional Football Field</h3>
+              </div>
+            </div>
+            <div class="facility-content">
+              <p>
+                FIFA-standard full-size football pitch with premium natural
+                grass and professional lighting for day and night matches.
+              </p>
+              <div class="facility-features">
+                <span class="feature-tag">FIFA Standard</span>
+                <span class="feature-tag">Natural Grass</span>
+                <span class="feature-tag">Floodlights</span>
+                <span class="feature-tag">Team Facilities</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="facility-card">
+            <div class="facility-image">
+              <img
+                src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Championship Tennis Court"
+              />
+              <div class="facility-overlay">
+                <div class="facility-icon">🎾</div>
+                <h3>Championship Tennis Court</h3>
+              </div>
+            </div>
+            <div class="facility-content">
+              <p>
+                Professional-grade tennis court with premium surface, perfect
+                for both recreational play and competitive matches.
+              </p>
+              <div class="facility-features">
+                <span class="feature-tag">Hard Court Surface</span>
+                <span class="feature-tag">LED Lighting</span>
+                <span class="feature-tag">Ball Machine</span>
+                <span class="feature-tag">Pro Shop</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="facility-card">
+            <div class="facility-image">
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="State-of-Art Fitness Center"
+              />
+              <div class="facility-overlay">
+                <div class="facility-icon">💪</div>
+                <h3>State-of-Art Fitness Center</h3>
+              </div>
+            </div>
+            <div class="facility-content">
+              <p>
+                Cutting-edge gym equipment with personal training services,
+                group classes, and wellness programs.
+              </p>
+              <div class="facility-features">
+                <span class="feature-tag">Latest Equipment</span>
+                <span class="feature-tag">Personal Trainers</span>
+                <span class="feature-tag">Group Classes</span>
+                <span class="feature-tag">Wellness Programs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="facility-card">
+            <div class="facility-image">
+              <img
+                src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Olympic Swimming Pool"
+              />
+              <div class="facility-overlay">
+                <div class="facility-icon">🏊</div>
+                <h3>Olympic Swimming Pool</h3>
+              </div>
+            </div>
+            <div class="facility-content">
+              <p>
+                25-meter swimming pool with dedicated lanes, poolside service,
+                and luxurious lounge area for relaxation.
+              </p>
+              <div class="facility-features">
+                <span class="feature-tag">25m Length</span>
+                <span class="feature-tag">8 Lanes</span>
+                <span class="feature-tag">Poolside Service</span>
+                <span class="feature-tag">Lounge Area</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="additional-features">
+          <div class="feature-item">
+            <i class="fas fa-clock"></i>
+            <h4>24/7 Access</h4>
+            <p>Facilities available around the clock for your convenience</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-users"></i>
+            <h4>Expert Staff</h4>
+            <p>Professional trainers and staff to assist your needs</p>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-bolt"></i>
+            <h4>Premium Equipment</h4>
+            <p>Latest technology and top-quality sports equipment</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Visual Experience</span>
+          <h2>Photo Gallery</h2>
+          <p>
+            Explore our world-class facilities through stunning photography that
+            captures the essence of luxury and athletic excellence
+          </p>
+        </div>
+
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">
+            All Photos
+          </button>
+          <button class="filter-btn" data-filter="football">
+            Football Field
+          </button>
+          <button class="filter-btn" data-filter="tennis">Tennis Court</button>
+          <button class="filter-btn" data-filter="gym">Fitness Center</button>
+          <button class="filter-btn" data-filter="pool">Swimming Pool</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+          <div class="gallery-item" data-category="football">
+            <img
+              src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Professional Football Field"
+            />
+            <div class="gallery-overlay">
+              <h4>Professional Football Field</h4>
+              <p>
+                FIFA-standard full-size football pitch with premium natural
+                grass
+              </p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="tennis">
+            <img
+              src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Championship Tennis Court"
+            />
+            <div class="gallery-overlay">
+              <h4>Championship Tennis Court</h4>
+              <p>Professional-grade hard court surface with LED lighting</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="gym">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="State-of-Art Fitness Center"
+            />
+            <div class="gallery-overlay">
+              <h4>State-of-Art Fitness Center</h4>
+              <p>Latest cardio and strength training equipment</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="pool">
+            <img
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Olympic Swimming Pool"
+            />
+            <div class="gallery-overlay">
+              <h4>Olympic Swimming Pool</h4>
+              <p>25-meter pool with 8 lanes and timing systems</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="football">
+            <img
+              src="https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Night Game Lighting"
+            />
+            <div class="gallery-overlay">
+              <h4>Night Game Lighting</h4>
+              <p>Professional floodlights for evening matches and training</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="tennis">
+            <img
+              src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Tennis Court at Sunset"
+            />
+            <div class="gallery-overlay">
+              <h4>Tennis Court at Sunset</h4>
+              <p>Beautiful evening play with professional lighting</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="gym">
+            <img
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Free Weights Section"
+            />
+            <div class="gallery-overlay">
+              <h4>Free Weights Section</h4>
+              <p>Complete range of free weights and functional training area</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="pool">
+            <img
+              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Poolside Lounge"
+            />
+            <div class="gallery-overlay">
+              <h4>Poolside Lounge</h4>
+              <p>Luxury lounge area with poolside service</p>
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+          <span class="lightbox-close">&times;</span>
+          <img id="lightbox-image" src="" alt="" />
+          <div class="lightbox-info">
+            <h3 id="lightbox-title"></h3>
+            <p id="lightbox-description"></p>
+          </div>
+          <button class="lightbox-nav lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="lightbox-nav lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Guest Testimonials</span>
+          <h2>What Our Guests Say</h2>
+          <p>
+            Hear from athletes, teams, and fitness enthusiasts who have
+            experienced our world-class facilities
+          </p>
+        </div>
+
+        <div class="rating-summary">
+          <div class="rating-item">
+            <div class="rating-number">4.9</div>
+            <div class="rating-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="rating-label">Overall Rating</div>
+          </div>
+          <div class="rating-item">
+            <div class="rating-number">500+</div>
+            <div class="rating-label">Happy Guests</div>
+          </div>
+          <div class="rating-item">
+            <div class="rating-number">98%</div>
+            <div class="rating-label">Would Recommend</div>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-header">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                alt="Marcus Johnson"
+              />
+              <div class="review-info">
+                <h4>Marcus Johnson</h4>
+                <p>Professional Football Player</p>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                "The football field here is absolutely world-class. The surface
+                is perfect, lighting is professional-grade, and the facilities
+                rival any stadium I've played in. Perfect for training camps."
+              </p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <img
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                alt="Sarah Williams"
+              />
+              <div class="review-info">
+                <h4>Sarah Williams</h4>
+                <p>Tennis Enthusiast</p>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                "The tennis court exceeded all my expectations. The surface is
+                pristine, and being able to play under the lights in the evening
+                was magical. The staff was incredibly helpful too."
+              </p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                alt="David Chen"
+              />
+              <div class="review-info">
+                <h4>David Chen</h4>
+                <p>Fitness Coach</p>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                "As a fitness professional, I'm impressed by the gym's equipment
+                quality and layout. Everything is top-of-the-line,
+                well-maintained, and the space is designed perfectly for serious
+                training."
+              </p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                alt="Emma Rodriguez"
+              />
+              <div class="review-info">
+                <h4>Emma Rodriguez</h4>
+                <p>Swim Team Captain</p>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                "The swimming pool is Olympic-quality with perfect lane markings
+                and timing systems. The poolside service and lounge area make it
+                feel like a luxury resort. Highly recommend!"
+              </p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                alt="James Thompson"
+              />
+              <div class="review-info">
+                <h4>James Thompson</h4>
+                <p>Sports Team Manager</p>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                "Brought our entire team here for a training retreat. The
+                facilities are unmatched, accommodations are luxurious, and the
+                staff went above and beyond to meet our needs."
+              </p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                alt="Lisa Park"
+              />
+              <div class="review-info">
+                <h4>Lisa Park</h4>
+                <p>Wellness Enthusiast</p>
+                <div class="review-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="review-content">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p>
+                "This place is a wellness paradise. From the state-of-the-art
+                gym to the serene pool area, every detail is designed for the
+                ultimate fitness and relaxation experience."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-cta">
+          <h3>Ready to Experience Excellence?</h3>
+          <p>
+            Join hundreds of satisfied guests who have made Elite Sports Resort
+            their preferred destination for luxury and athletic excellence.
+          </p>
+          <div class="cta-buttons">
+            <button
+              class="btn btn-primary"
+              onclick="scrollToSection('booking')"
+            >
+              Book Your Stay
+            </button>
+            <button
+              class="btn btn-outline"
+              onclick="scrollToSection('gallery')"
+            >
+              View Gallery
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Reserve Your Experience</span>
+          <h2>Book Your Stay</h2>
+          <p>
+            Secure your reservation at our luxury sports resort and experience
+            world-class facilities
+          </p>
+        </div>
+
+        <div class="booking-content">
+          <div class="booking-form-container">
+            <div class="form-card">
+              <h3>Reservation Details</h3>
+              <p>Fill in your information to book your stay</p>
+
+              <form id="booking-form" class="booking-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="checkin">Check-in Date</label>
+                    <input type="date" id="checkin" name="checkin" required />
+                    <span class="error-message" id="checkin-error"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="checkout">Check-out Date</label>
+                    <input type="date" id="checkout" name="checkout" required />
+                    <span class="error-message" id="checkout-error"></span>
+                  </div>
+                </div>
+
+                <div
+                  id="booking-summary"
+                  class="booking-summary"
+                  style="display: none"
+                >
+                  <div class="summary-item">
+                    <span id="nights-count">0 nights</span>
+                    <span id="total-price">$0</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" name="guests" required>
+                      <option value="">Select guests</option>
+                      <option value="1">1 Guest</option>
+                      <option value="2">2 Guests</option>
+                      <option value="3">3 Guests</option>
+                      <option value="4">4 Guests</option>
+                      <option value="5+">5+ Guests</option>
+                    </select>
+                    <span class="error-message" id="guests-error"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="roomtype">Room Type</label>
+                    <select id="roomtype" name="roomtype" required>
+                      <option value="">Select room type</option>
+                      <option value="deluxe" data-price="299">
+                        Deluxe Room - $299/night
+                      </option>
+                      <option value="suite" data-price="499">
+                        Executive Suite - $499/night
+                      </option>
+                      <option value="presidential" data-price="899">
+                        Presidential Suite - $899/night
+                      </option>
+                      <option value="sports" data-price="0">
+                        Sports Team Package - Contact Us
+                      </option>
+                    </select>
+                    <span class="error-message" id="roomtype-error"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="fullname">Full Name</label>
+                  <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                  <span class="error-message" id="fullname-error"></span>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="your@email.com"
+                      required
+                    />
+                    <span class="error-message" id="email-error"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+1 (555) 123-4567"
+                      required
+                    />
+                    <span class="error-message" id="phone-error"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="requests">Special Requests</label>
+                  <textarea
+                    id="requests"
+                    name="requests"
+                    placeholder="Any special requirements or requests..."
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-full"
+                  id="submit-btn"
+                >
+                  <i class="fas fa-calendar"></i>
+                  <span>Reserve Now</span>
+                  <div class="loading-spinner" style="display: none"></div>
+                </button>
+              </form>
+
+              <div
+                id="success-message"
+                class="success-message"
+                style="display: none"
+              >
+                <i class="fas fa-check-circle"></i>
+                <p>
+                  Booking request submitted successfully! We'll contact you
+                  shortly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-info">
+            <div class="info-card">
+              <h4>Room Packages</h4>
+              <div class="price-list">
+                <div class="price-item">
+                  <span>Deluxe Room</span>
+                  <span>$299/night</span>
+                </div>
+                <div class="price-item">
+                  <span>Executive Suite</span>
+                  <span>$499/night</span>
+                </div>
+                <div class="price-item">
+                  <span>Presidential Suite</span>
+                  <span>$899/night</span>
+                </div>
+                <div class="price-item special">
+                  <span>Sports Team Package</span>
+                  <span>Contact Us</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h4>Contact Information</h4>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <span
+                    ><a
+                      href="/cdn-cgi/l/email-protection"
+                      class="__cf_email__"
+                      data-cfemail="f08295839582869184999f9e83b0959c99849583809f8284838295839f8284de939f9d"
+                      >[email&#160;protected]</a
+                    ></span
+                  >
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>123 Sports Boulevard, Athletic City, AC 12345</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h4>Included Amenities</h4>
+              <div class="amenities-list">
+                <div class="amenity-item">
+                  <i class="fas fa-wifi"></i>
+                  <span>Free WiFi</span>
+                </div>
+                <div class="amenity-item">
+                  <i class="fas fa-dumbbell"></i>
+                  <span>Gym Access</span>
+                </div>
+                <div class="amenity-item">
+                  <i class="fas fa-swimming-pool"></i>
+                  <span>Pool Access</span>
+                </div>
+                <div class="amenity-item">
+                  <i class="fas fa-parking"></i>
+                  <span>Parking</span>
+                </div>
+                <div class="amenity-item">
+                  <i class="fas fa-concierge-bell"></i>
+                  <span>Concierge</span>
+                </div>
+                <div class="amenity-item">
+                  <i class="fas fa-room-service"></i>
+                  <span>Room Service</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Get In Touch</span>
+          <h2>Contact & Location</h2>
+          <p>
+            Ready to experience luxury sports hospitality? We're here to help
+            you plan your perfect stay
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-form-container">
+            <div class="form-card">
+              <h3><i class="fas fa-comment"></i> Send Us a Message</h3>
+
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input
+                      type="text"
+                      id="firstname"
+                      name="firstname"
+                      placeholder="John"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastname"
+                      name="lastname"
+                      placeholder="Doe"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="phone"
+                    placeholder="+1 (555) 123-4567"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Booking inquiry, facility question, etc."
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your needs, dates, group size, or any questions you have..."
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                  <i class="fas fa-paper-plane"></i>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="contact-info">
+            <div class="info-card">
+              <h4>Contact Information</h4>
+              <div class="contact-details">
+                <div class="contact-detail">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h5>Address</h5>
+                    <p>
+                      123 Sports Boulevard<br />Athletic City, AC 12345<br />United
+                      States
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-detail">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h5>Phone</h5>
+                    <p>
+                      Main: +1 (555) 123-4567<br />Reservations: +1 (555)
+                      123-4568
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-detail">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h5>Email</h5>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="88e1e6eee7c8ede4e1fcedfbf8e7fafcfbfaedfbe7fafca6ebe7e5"
+                        >[email&#160;protected]</a
+                      ><br /><a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="b4c6d1c7d1c6c2d5c0dddbdac7f4d1d8ddc0d1c7c4dbc6c0c7c6d1c7dbc6c09ad7dbd9"
+                        >[email&#160;protected]</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="contact-detail">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h5>Hours</h5>
+                    <p>Front Desk: 24/7<br />Facilities: 5:00 AM - 11:00 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <h4>Getting Here</h4>
+              <div class="transport-options">
+                <div class="transport-item">
+                  <i class="fas fa-plane"></i>
+                  <div>
+                    <strong>Airport:</strong>
+                    <span>15 minutes from Athletic City Airport</span>
+                  </div>
+                </div>
+                <div class="transport-item">
+                  <i class="fas fa-car"></i>
+                  <div>
+                    <strong>Driving:</strong>
+                    <span>Free parking available</span>
+                  </div>
+                </div>
+                <div class="transport-item">
+                  <i class="fas fa-train"></i>
+                  <div>
+                    <strong>Public Transit:</strong>
+                    <span>Metro Station 5 blocks away</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.2358840256306!2d42.713207511739185!3d42.23593834281401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405ced59ad1080a3%3A0xcfffdd5f8b662e56!2z4YOl4YOj4YOX4YOQ4YOY4YOh4YOY4YOhIOGDpeGDleGDmOGDoSDhg6Xhg5Dhg6Dhg67hg5Dhg5zhg5A!5e1!3m2!1ska!2sge!4v1759259083149!5m2!1ska!2sge"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="emergency-contact">
+          <div class="emergency-card">
+            <h3>24/7 Emergency Contact</h3>
+            <p>
+              For urgent matters or emergencies during your stay, our staff is
+              available around the clock.
+            </p>
+            <div class="emergency-buttons">
+              <button class="btn btn-outline emergency-btn">
+                <i class="fas fa-phone"></i>
+                Emergency: +1 (555) 911-HELP
+              </button>
+              <button class="btn btn-outline emergency-btn">
+                <i class="fas fa-comment"></i>
+                24/7 Chat Support
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("4rL--eLDuIOnpT6bj"); // 👈 replace with your EmailJS public key
+  })();
+</script>
+
+    <script src="script.js"></script>
+     </div>
+  </div>
+  </body>
+</html>
