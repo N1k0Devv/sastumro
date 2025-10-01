@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeAnimations();
   initializeCounters();
   initializeGSAP();
+  // Show elements that are already visible
+  handleScrollAnimations();
 });
 
 // GSAP Initialization
@@ -62,21 +64,21 @@ function initializeGSAP() {
       ease: "back.out(1.7)",
     });
 
-    // Animate sections on scroll
-    gsap.utils.toArray("section").forEach((section, i) => {
+    // Animate sections on scroll (excluding hero section)
+    gsap.utils.toArray("section:not(.hero)").forEach((section, i) => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top 80%",
+        start: "top 90%",
         onEnter: () => {
           gsap.from(
             section.querySelectorAll(
               ".facility-card, .review-card, .gallery-item, .feature-item"
             ),
             {
-              duration: 0.8,
-              y: 30,
+              duration: 0.5,
+              y: 20,
               opacity: 0,
-              stagger: 0.1,
+              stagger: 0.05,
               ease: "power2.out",
             }
           );
@@ -95,7 +97,7 @@ function initializeScrollEffects() {
       updateHeaderBackground();
       updateBackToTopVisibility();
       handleScrollAnimations();
-    }, 16)
+    }, 10)
   );
 }
 
@@ -131,7 +133,7 @@ function handleScrollAnimations() {
 
   elements.forEach((element) => {
     const elementTop = element.getBoundingClientRect().top;
-    const elementVisible = 150;
+    const elementVisible = 200;
 
     if (elementTop < window.innerHeight - elementVisible) {
       element.style.opacity = "1";
@@ -472,7 +474,7 @@ function handleBookingSubmit(e) {
     };
 
     emailjs
-      .send("service_lf7y8uf", "template_87yzvfc", formData)
+      .send("service_lf7y8uf", "template_9hkz72w", formData)
       .then(() => {
         alert("✅ Booking request sent successfully!");
         bookingForm.reset();
@@ -482,7 +484,6 @@ function handleBookingSubmit(e) {
       });
   }
 }
-
 
 function handleContactSubmit(e) {
   e.preventDefault();
@@ -497,7 +498,7 @@ function handleContactSubmit(e) {
     };
 
     emailjs
-      .send("service_lf7y8uf", "template_87yzvfc", formData)
+      .send("service_lf7y8uf", "template_9hkz72w", formData)
       .then(() => {
         alert("✅ Message sent! We will reply within 24 hours.");
         contactForm.reset();
@@ -507,7 +508,6 @@ function handleContactSubmit(e) {
       });
   }
 }
-
 
 function validateBookingForm() {
   let isValid = true;
@@ -649,8 +649,8 @@ function isValidPhone(phone) {
 function initializeAnimations() {
   // Intersection Observer for scroll animations
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+    threshold: 0.05,
+    rootMargin: "0px 0px 100px 0px",
   };
 
   const observer = new IntersectionObserver(function (entries) {
@@ -667,14 +667,14 @@ function initializeAnimations() {
           setTimeout(() => {
             child.style.opacity = "1";
             child.style.transform = "translateY(0)";
-          }, index * 100);
+          }, index * 50);
         });
       }
     });
   }, observerOptions);
 
-  // Observe sections
-  const sections = document.querySelectorAll("section");
+  // Observe sections (excluding hero section)
+  const sections = document.querySelectorAll("section:not(.hero)");
   sections.forEach((section) => {
     observer.observe(section);
   });
@@ -685,8 +685,8 @@ function initializeAnimations() {
   );
   animatedElements.forEach((element) => {
     element.style.opacity = "0";
-    element.style.transform = "translateY(30px)";
-    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    element.style.transform = "translateY(20px)";
+    element.style.transition = "opacity 0.4s ease, transform 0.4s ease";
   });
 }
 

@@ -250,6 +250,8 @@ body {
   max-width: 800px;
   padding: 0 2rem;
   animation: fadeInUp 1s ease-out;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .hero-stars {
@@ -1251,13 +1253,28 @@ section {
   display: flex;
   gap: 1.5rem;
 }
-
+#contact-content{
+    margin-top: 100px;
+}
+#Location-info{
+  margin-top: 150px;
+}
+.price-item span{
+  color: black;
+}
+.contact-item{
+  color: black;
+}
+.amenity-item{
+  color: black;
+}
 .map {
   flex: 1 1 60%;
   display: block;
   border-radius: 0.5rem;
   overflow: hidden;
   background: #fff;
+  height: 800px;
 }
 
 .map iframe {
@@ -1565,7 +1582,7 @@ section {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
