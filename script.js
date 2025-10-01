@@ -858,10 +858,10 @@ function initTranslateButton() {
     const current = getCookie("googtrans") || "";
     if (current.indexOf("/en/ka") !== -1) {
       btn.innerHTML = '<i class="fas fa-language"></i> EN';
-      btn.title = 'Switch to English';
+      btn.title = "Switch to English";
     } else {
       btn.innerHTML = '<i class="fas fa-language"></i> Geo';
-      btn.title = 'Translate to Georgian';
+      btn.title = "Translate to Georgian";
     }
   }
 
@@ -869,29 +869,36 @@ function initTranslateButton() {
 
   btn.addEventListener("click", function () {
     // If running from file://, Google Translate won't load — warn the user
-    if (window.location.protocol === 'file:') {
-      alert('Translation requires serving the site over http. Run a local server (e.g., python -m http.server) and open via http://localhost');
+    if (window.location.protocol === "file:") {
+      alert(
+        "Translation requires serving the site over http. Run a local server (e.g., python -m http.server) and open via http://localhost"
+      );
       return;
     }
 
-    const target = (getCookie("googtrans") || "").indexOf('/en/ka') !== -1 ? '/en/en' : '/en/ka';
+    const target =
+      (getCookie("googtrans") || "").indexOf("/en/ka") !== -1
+        ? "/en/en"
+        : "/en/ka";
 
     // Write cookie multiple ways to handle different host/domain configurations
     try {
-      setCookie('googtrans', target, 365);
+      setCookie("googtrans", target, 365);
       const host = window.location.hostname;
       if (host) {
         // try host and dot-host
-        setCookie('googtrans', target, 365, host);
-        setCookie('googtrans', target, 365, '.' + host);
+        setCookie("googtrans", target, 365, host);
+        setCookie("googtrans", target, 365, "." + host);
       }
     } catch (e) {
       // fallback to simple cookie
-      setCookie('googtrans', target, 365);
+      setCookie("googtrans", target, 365);
     }
 
     // Force reload so Google Translate picks up the cookie
-    setTimeout(function () { location.reload(); }, 150);
+    setTimeout(function () {
+      location.reload();
+    }, 150);
   });
 }
 
