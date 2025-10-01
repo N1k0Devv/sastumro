@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeGSAP();
   // Show elements that are already visible
   handleScrollAnimations();
+  initTranslateButton();
 });
 
 // GSAP Initialization
@@ -824,6 +825,75 @@ document.addEventListener("keydown", function (e) {
     }
   }
 });
+
+// --- Google Translate toggle helpers ---
+function setCookie(name, value, days, domain) {
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  let cookie = name + "=" + (value || "") + expires + "; path=/";
+  if (domain) cookie += "; domain=" + domain;
+  document.cookie = cookie;
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function initTranslateButton() {
+  const btn = document.getElementById("translate-btn");
+  if (!btn) return;
+  // update button label based on current cookie
+  function updateBtnLabel() {
+    const current = getCookie("googtrans") || "";
+    if (current.indexOf("/en/ka") !== -1) {
+      btn.innerHTML = '<i class="fas fa-language"></i> EN';
+      btn.title = 'Switch to English';
+    } else {
+      btn.innerHTML = '<i class="fas fa-language"></i> Geo';
+      btn.title = 'Translate to Georgian';
+    }
+  }
+
+  updateBtnLabel();
+
+  btn.addEventListener("click", function () {
+    // If running from file://, Google Translate won't load — warn the user
+    if (window.location.protocol === 'file:') {
+      alert('Translation requires serving the site over http. Run a local server (e.g., python -m http.server) and open via http://localhost');
+      return;
+    }
+
+    const target = (getCookie("googtrans") || "").indexOf('/en/ka') !== -1 ? '/en/en' : '/en/ka';
+
+    // Write cookie multiple ways to handle different host/domain configurations
+    try {
+      setCookie('googtrans', target, 365);
+      const host = window.location.hostname;
+      if (host) {
+        // try host and dot-host
+        setCookie('googtrans', target, 365, host);
+        setCookie('googtrans', target, 365, '.' + host);
+      }
+    } catch (e) {
+      // fallback to simple cookie
+      setCookie('googtrans', target, 365);
+    }
+
+    // Force reload so Google Translate picks up the cookie
+    setTimeout(function () { location.reload(); }, 150);
+  });
+}
 
 // Service Worker registration (if available)
 if ("serviceWorker" in navigator) {

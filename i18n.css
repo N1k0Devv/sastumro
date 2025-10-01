@@ -1,0 +1,416 @@
+/* Georgian Typography Improvements */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Georgian Font Stack */
+html[lang="ka"] {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', 'DejaVu Sans', sans-serif;
+}
+
+html[lang="ka"] * {
+  font-family: inherit;
+}
+
+/* Enhanced Georgian Header Styling */
+html[lang="ka"] .logo h1 {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Georgian Navigation Links */
+html[lang="ka"] .nav-desktop a,
+html[lang="ka"] .nav-mobile a {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+}
+
+/* Georgian Button Text */
+html[lang="ka"] .btn {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+/* Georgian Hero Title */
+html[lang="ka"] .hero-title {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Georgian Hero Subtitle */
+html[lang="ka"] .hero-subtitle {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Georgian Section Headers */
+html[lang="ka"] .section-header h2,
+html[lang="ka"] h2, html[lang="ka"] h3, html[lang="ka"] h4 {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Georgian Body Text */
+html[lang="ka"] p,
+html[lang="ka"] span:not(.language-text):not(.language-flag),
+html[lang="ka"] label,
+html[lang="ka"] input,
+html[lang="ka"] textarea {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.005em;
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  z-index: 10;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(15px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.language-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.language-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.header.scrolled .language-btn {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.25);
+  color: #374151;
+}
+
+.header.scrolled .language-btn:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #6366f1;
+}
+
+.language-btn:active {
+  transform: translateY(0);
+}
+
+.language-flag {
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  filter: brightness(1.1);
+}
+
+.language-text {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Georgian language text in switcher */
+html[lang="en"] .language-text {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+/* English language text in switcher when Georgian is active */
+html[lang="ka"] .language-text {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+/* Animation for language switching */
+.language-switching {
+  animation: languageSwitch 0.3s ease-in-out;
+}
+
+@keyframes languageSwitch {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Georgian Text Spacing Improvements */
+html[lang="ka"] {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Georgian Form Elements */
+html[lang="ka"] input::placeholder,
+html[lang="ka"] textarea::placeholder {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Georgian Select Options */
+html[lang="ka"] select,
+html[lang="ka"] option {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 500;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .language-switcher {
+    order: -1;
+    margin-right: 0;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  
+  .language-btn {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+  }
+  
+  .language-text {
+    display: none;
+  }
+  
+  .language-flag {
+    font-size: 1.2em;
+  }
+  
+  /* Georgian mobile header */
+  html[lang="ka"] .logo h1 {
+    font-size: 1.7rem;
+  }
+  
+  html[lang="ka"] .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  html[lang="ka"] .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-btn {
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+  }
+  
+  /* Very small screens Georgian adjustments */
+  html[lang="ka"] .logo h1 {
+    font-size: 1.5rem;
+    max-width: 280px;
+  }
+  
+  html[lang="ka"] .nav-desktop {
+    gap: 1.5rem;
+  }
+  
+  html[lang="ka"] .nav-cta {
+    gap: 0.5rem;
+  }
+  
+  html[lang="ka"] .btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1440px) {
+  html[lang="ka"] .logo h1 {
+    font-size: 2.1rem;
+    max-width: 400px;
+  }
+  
+  html[lang="ka"] .nav-desktop {
+    gap: 3rem;
+  }
+  
+  html[lang="ka"] .nav-desktop a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .language-btn {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .language-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .language-btn {
+    border-width: 3px;
+    border-color: white;
+  }
+  
+  .language-btn:hover {
+    background: white;
+    color: black;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .language-btn {
+    transition: none;
+  }
+  
+  .language-btn:hover {
+    transform: none;
+  }
+  
+  .language-switching {
+    animation: none;
+  }
+}
+
+/* Focus states for accessibility */
+.language-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.language-btn:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Language Switching Animation */
+.language-switching {
+  animation: languageSwitch 0.4s ease-in-out;
+}
+
+body.language-switching {
+  opacity: 0.95;
+}
+
+/* Georgian Header Layout Improvements */
+html[lang="ka"] .nav-content {
+  gap: 1rem;
+}
+
+html[lang="ka"] .nav-desktop {
+  gap: 2rem;
+}
+
+/* Georgian text overflow handling */
+html[lang="ka"] .logo h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px;
+}
+
+/* Better Georgian button spacing */
+html[lang="ka"] .nav-cta {
+  gap: 0.8rem;
+}
+
+html[lang="ka"] .btn {
+  padding: 0.875rem 1.8rem;
+  white-space: nowrap;
+}
+
+/* Georgian modal and form improvements */
+html[lang="ka"] .form-card h3,
+html[lang="ka"] .info-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Georgian stats and counters */
+html[lang="ka"] .stat-label,
+html[lang="ka"] .rating-label {
+  font-family: 'Noto Sans Georgian', 'BPG Nino Mtavruli', 'Sylfaen', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* RTL support (for future use) */
+html[dir="rtl"] .language-switcher {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+html[dir="rtl"] .language-btn {
+  flex-direction: row-reverse;
+}
+
+/* Print styles */
+@media print {
+  .language-switcher {
+    display: none;
+  }
+}
