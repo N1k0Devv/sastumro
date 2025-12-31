@@ -1780,3 +1780,78 @@ section {
     margin-bottom: 1rem;
   }
 }
+/* ================================
+   MOBILE RESPONSIVE FIXES
+   ================================ */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Disable desktop nav on mobile */
+  .nav-desktop,
+  .nav-cta {
+    display: none !important;
+  }
+
+  /* Enable mobile menu button */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  /* Fix hero background issue on mobile */
+  .hero-background {
+    background-attachment: scroll;
+  }
+
+  /* Responsive hero typography */
+  .hero-title {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Stack hero stats */
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Fix facilities grid breaking mobile */
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Fix reviews cards width */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Fix contact layout */
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .map {
+    min-height: 300px;
+    margin-top: 0;
+  }
+
+  /* Reduce section padding */
+  section {
+    padding: 4rem 0;
+  }
+
+  /* Prevent images from breaking layout */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
